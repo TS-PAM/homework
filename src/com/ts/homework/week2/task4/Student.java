@@ -1,4 +1,4 @@
-package com.ts.homework.week2.task4;
+﻿package com.ts.homework.week2.task4;
 
 public class Student implements Comparable<Student>{
     private String name;
@@ -24,6 +24,11 @@ public class Student implements Comparable<Student>{
 
     @Override
     public int compareTo(Student o) {
-        return this.getGroup() - o.getGroup();
+         int result = this.getGroup() - o.getGroup();
+
+         if(result == 0){
+             result = this.name.compareTo(o.getName());
+         }
+         return result;
     }
 }
